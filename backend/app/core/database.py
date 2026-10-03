@@ -11,10 +11,14 @@ has_pgvector = False
 
 # Try PostgreSQL first
 try:
+    db_url = settings.DATABASE_URL
+    if db_url and db_url.startswith("postgresql://"):
+        db_url = db_url.replace("postgresql://", "postgresql+psycopg2://", 1)
+
     test_engine = create_engine(
-        settings.DATABASE_URL,
+        db_url,
         pool_pre_ping=True,
-        connect_args={"connect_timeout": 3}
+        connect_args={"connect_timeout": 10}
     )
     with test_engine.connect() as conn:
         conn.execute(text("SELECT 1;"))
