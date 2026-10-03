@@ -1,0 +1,64 @@
+Computer Networks Interview Questions & Core Concepts
+
+Q1. What is a Network?
+A set of computing devices interconnected via physical transmission media (cables, optical fiber, wireless) to communicate, route data packets, and share resources.
+
+Q2. What is a Node?
+Any addressable device connected to a network capable of sending, receiving, or forwarding electronic data (computers, printers, routers, switches).
+
+Q3. Network Topology:
+Physical or logical arrangement of network elements. Examples: Bus (single shared backbone cable), Star (central switch/hub), Ring (unidirectional token loop), Mesh (point-to-point interconnections for maximum fault tolerance).
+
+Q4. Routers vs Switches vs Hubs:
+- Hub: Layer 1 (Physical) device. Broadcasts incoming frames out of all ports indiscriminately. High collision domain, least efficient.
+- Switch: Layer 2 (Data Link) device. Inspects MAC addresses, maintains a MAC address table, forwards unicast frames only to the designated port.
+- Router: Layer 3 (Network) device. Examines IP addresses, uses routing protocols (BGP, OSPF) to direct packets between disparate networks/subnets.
+
+Q5. OSI Reference Model (7 Layers):
+1. Physical Layer: Transmission of raw bit streams over electrical, optical, or radio channels (Ethernet physical, cables).
+2. Data Link Layer: Node-to-node framing, physical MAC addressing, flow control, error detection (CRC).
+3. Network Layer: Logical addressing (IPv4/IPv6), packet routing, path determination across subnets.
+4. Transport Layer: End-to-end process communication, flow control, error recovery, segmentation (TCP, UDP).
+5. Session Layer: Establishes, manages, checkpoints, and terminates dialogues between applications.
+6. Presentation Layer: Syntax conversion, data encryption/decryption (SSL/TLS), compression.
+7. Application Layer: End-user interface protocols (HTTP, SMTP, DNS, FTP, SSH).
+
+Q6. TCP/IP Model (4 Layers):
+- Application Layer: HTTP, HTTPS, FTP, DNS, SMTP.
+- Transport Layer: TCP (reliable, connection-oriented) and UDP (unreliable, low-latency, datagram).
+- Internet Layer: IP (logical routing), ICMP, ARP.
+- Network Access / Link Layer: Ethernet, Wi-Fi, framing and hardware interface.
+
+Q7. HTTP vs HTTPS:
+- HTTP: Cleartext HyperText Transfer Protocol, default TCP port 80.
+- HTTPS: Secure HTTP wrapped in TLS/SSL encryption, default TCP port 443. Guarantees confidentiality, server authentication, and message integrity.
+
+Q8. TCP vs UDP:
+- TCP: Connection-oriented (3-way handshake SYN, SYN-ACK, ACK), guaranteed delivery, sequential packet ordering, congestion control, windowing. Higher latency.
+- UDP: Connectionless, sends datagrams without handshake or delivery guarantees, minimal header overhead (8 bytes), low latency. Used in gaming, VoIP, live streaming.
+
+Q9. DNS (Domain Name System):
+The hierarchical distributed naming system converting human-readable hostnames (e.g. www.google.com) into numerical IP addresses (e.g. 142.250.190.46) using recursive and authoritative name servers over UDP/TCP port 53.
+
+Q10. DHCP (Dynamic Host Configuration Protocol):
+Automates assignment of IP addresses, subnet masks, default gateways, and DNS servers to client devices using the DORA process (Discover, Offer, Request, Acknowledge) over UDP ports 67/68.
+
+Q11. IP Addressing & Classes:
+- IPv4: 32-bit address expressed in 4 decimal octets (e.g. 192.168.1.1).
+  - Class A: 0.0.0.0 to 127.255.255.255 (Large networks, /8)
+  - Class B: 128.0.0.0 to 191.255.255.255 (Medium networks, /16)
+  - Class C: 192.0.0.0 to 223.255.255.255 (Small local networks, /24)
+  - Loopback: 127.0.0.1 (localhost)
+- IPv6: 128-bit hexadecimal address resolving IPv4 exhaustion.
+
+Q12. ARP (Address Resolution Protocol):
+Translates a known Layer 3 IP address to a physical Layer 2 MAC address on the local network segment using ARP Request (broadcast) and ARP Reply (unicast).
+
+Q13. VPN (Virtual Private Network):
+Encrypted tunnel across the public internet providing secure, authenticated communication between remote clients and private corporate networks (IPSec, OpenVPN, WireGuard).
+
+Q14. Firewalls:
+Network security barrier inspecting inbound and outbound packets against predefined security rules (stateless packet filtering, stateful inspection, next-generation application-aware firewalls).
+
+Q15. Data Encapsulation / Decapsulation:
+As data descends the protocol stack, each layer wraps the payload with its specific protocol header (Data -> Segment -> Packet -> Frame -> Bits). Decapsulation strips headers in reverse at the receiver.

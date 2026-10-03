@@ -1,0 +1,181 @@
+Complete Preparation Guide for DBMS - Core Interview Concepts
+
+Q1. Difference between DBMS and RDBMS:
+DBMS manages data without enforcing strict relationships or tabular constraints. RDBMS stores data in structured tables (rows and columns) with constraints (primary key, foreign key) and adheres to ACID properties (Atomicity, Consistency, Isolation, Durability) for enterprise reliability.
+
+Q2. Primary Key vs Unique Key:
+- Primary Key: Uniquely identifies each record in a table. Cannot accept NULL values. Only one Primary Key allowed per table.
+- Unique Key: Enforces uniqueness across a column but allows one NULL value. A table can have multiple unique keys.
+
+Q3. Foreign Key:
+A foreign key is a column or set of columns in one table referencing the Primary Key of another table. It enforces referential integrity. Can be NULL if the association is optional.
+
+Q4. Candidate Key:
+A minimal set of attributes that can uniquely identify a tuple in a table. From multiple candidate keys, the DBA selects one as the Primary Key; the rest serve as alternate keys.
+
+Q5. Composite Key:
+A key composed of two or more columns combined together to guarantee uniqueness when no individual attribute is unique alone (e.g., StudentID + CourseID).
+
+Q6. Schema vs Instance:
+- Schema: The structural blueprint/design of the database (tables, data types, relationships). Fixed and changes rarely.
+- Instance: The actual state and data stored in the database at a specific point in time. Changes with each DML operation.
+
+Q7. Super Key:
+Any superset of attributes that can uniquely identify a row. A candidate key is a minimal super key.
+
+Q8. Integrity Constraints:
+Rules ensuring accuracy and validity:
+- Domain Constraints: Valid values for attributes (types, ranges).
+- Entity Integrity: Primary key must be non-null and unique.
+- Referential Integrity: Foreign keys must match referenced primary keys or be null.
+- Key Constraints: Unique/Primary constraints.
+
+Q9. Referential Integrity:
+Prevents orphan records. You cannot insert a foreign key value unless it exists in the parent table, and you cannot delete a parent record if children depend on it (unless CASCADE is configured).
+
+Q10. DELETE vs TRUNCATE vs DROP:
+- DELETE: DML command, deletes specific rows using WHERE clause, logged row-by-row, rollback possible, triggers fire.
+- TRUNCATE: DDL command, removes all rows by deallocating pages, faster, minimal logging, cannot filter by WHERE.
+- DROP: DDL command, completely removes the table definition, constraints, and data from disk.
+
+Q11. Joins:
+- INNER JOIN: Returns matching rows present in both tables.
+- LEFT (OUTER) JOIN: Returns all rows from left table, plus matched rows from right (NULL if no match).
+- RIGHT (OUTER) JOIN: Returns all rows from right table, plus matched rows from left.
+- FULL (OUTER) JOIN: Returns all rows when there is a match in either left or right.
+
+Q12. WHERE vs HAVING:
+- WHERE filters individual rows before any GROUP BY aggregation takes place. Cannot use aggregate functions.
+- HAVING filters grouped records after aggregation. Can use aggregate functions like SUM, COUNT, AVG.
+
+Q13. Second Highest Salary SQL:
+- Subquery: SELECT MAX(Salary) FROM Employees WHERE Salary < (SELECT MAX(Salary) FROM Employees);
+- Window function: WITH Ranked AS (SELECT Salary, DENSE_RANK() OVER (ORDER BY Salary DESC) as rnk FROM Employees) SELECT Salary FROM Ranked WHERE rnk = 2;
+
+Q14. GROUP BY with HAVING:
+SELECT DepartmentID, COUNT(*) AS EmployeeCount FROM Employees GROUP BY DepartmentID HAVING COUNT(*) > 5;
+
+Q15. Denormalization:
+Process of intentionally adding redundancy to a normalized schema to minimize expensive joins and accelerate heavy read/analytical query workloads.
+
+Q16. OLTP vs OLAP:
+- OLTP (Online Transaction Processing): Highly normalized, fast atomic writes/updates, current state (e.g. banking, e-commerce checkout).
+- OLAP (Online Analytical Processing): Denormalized, star/snowflake schemas, multidimensional cubes for business intelligence and historical reporting.
+
+Q17. Star Schema vs Snowflake Schema:
+- Star Schema: Central fact table connected directly to denormalized dimension tables. Simpler, faster queries.
+- Snowflake Schema: Dimension tables are normalized into hierarchies. Saves storage, requires more joins.
+
+Q18. Database Anomalies:
+- Insertion Anomaly: Cannot insert parent data without supplying unnecessary dummy child data.
+- Deletion Anomaly: Deleting one piece of data unintentionally removes unrelated critical info.
+- Update Anomaly: Inconsistent data due to partial updates across redundant copies.
+
+Q19. BCNF vs 3NF:
+3NF allows A -> B if B is a prime attribute even if A is not a super key. BCNF is stricter: in every non-trivial functional dependency X -> Y, X must strictly be a super key.
+
+Q20. Functional Dependency:
+X -> Y means the value of X uniquely determines the value of Y.
+
+Q21. Multivalued Dependency (MVD):
+A ->> B indicates attribute A determines multiple independent values of B, independent of attribute C. Requires 4NF decomposition.
+
+Q22. Fact Table vs Dimension Table:
+- Fact Table: Stores quantitative numerical metrics (revenue, units sold, duration) with foreign keys to dimensions.
+- Dimension Table: Stores descriptive context (customer details, product names, geographic locations).
+
+Q23. Surrogate Keys:
+Synthetic, system-generated identifiers (UUID, auto-increment integer) used in place of natural business keys for stability, performance, and immunity to real-world data changes.
+
+Q24. Clustered vs Non-Clustered Index:
+- Clustered Index: Dictates the physical storage order of rows on disk. Only one per table. Range scans are fast.
+- Non-Clustered Index: Separate B-tree structure holding key values and pointers/RowIDs to the actual data pages. Multiple allowed per table.
+
+Q25. Index Performance Trade-offs:
+Improves read performance and sorting; degrades write performance (INSERT/UPDATE/DELETE) because indexes must be maintained on every modification.
+
+Q26. B-Tree vs Hash Index:
+- B-Tree: Balanced tree, supports range queries (<, >, BETWEEN) and prefix lookups O(log n).
+- Hash Index: Constant time O(1) equality lookup (=), does not support range scans or ordering.
+
+Q27. Covering Index:
+An index containing all columns requested by a query. The database engine satisfies the query entirely from the index tree without fetching the base table row (index-only scan).
+
+Q28. Primary vs Secondary Index:
+- Primary Index: Created on the primary key, typically clustered.
+- Secondary Index: Created on candidate or non-key columns, typically non-clustered pointing to the primary key or tuple ID.
+
+Q29. Transaction Types:
+Read-only, Update, Distributed (across nodes), Nested (sub-transactions), Immediate, and Deferred transactions.
+
+Q30. Pessimistic vs Optimistic Locking:
+- Pessimistic: Locks records upon read/write assuming collisions are frequent. High consistency, risk of deadlocks/blocking.
+- Optimistic: Allows concurrent edits without locks, checks version/timestamp at commit. High throughput, retries required on collision.
+
+Q31. Phantom Read:
+A transaction re-executes a range query and discovers new rows inserted by another concurrent committed transaction. Prevented by SERIALIZABLE isolation.
+
+Q32. Two-Phase Commit (2PC):
+1. Prepare Phase: Coordinator queries participants if they can commit.
+2. Commit Phase: If all vote yes, coordinator broadcasts commit; otherwise, all abort.
+
+Q33. Write-Ahead Logging (WAL):
+Ensures Atomicity and Durability (ACID) by logging modifications to persistent storage before writing dirty pages to the database files. Enables crash recovery (REDO/UNDO).
+
+Q34. Consistency vs Durability:
+- Consistency: Preserves all invariants and schema constraints across transitions.
+- Durability: Guarantees committed transactions persist permanently even during sudden power failure.
+
+Q35. Sharding:
+Horizontal partitioning across multiple independent physical database instances based on a shard key (e.g., hash(user_id)).
+
+Q36. Horizontal vs Vertical Partitioning:
+- Horizontal: Splitting rows across tables/shards (e.g., by region or date).
+- Vertical: Splitting columns across tables (e.g., frequently accessed columns separated from heavy BLOB/text columns).
+
+Q37. Materialized Views:
+A database object containing the physically stored, precomputed result of a complex query. Refreshed periodically or on commit.
+
+Q38. CAP Theorem:
+In a distributed asynchronous network, you can guarantee at most two of: Consistency (all nodes see latest data), Availability (every request receives non-error response), and Partition Tolerance (system functions despite network drops). Typically CP vs AP.
+
+Q39. SQL vs NoSQL:
+- SQL: Relational, rigid schema, ACID compliance, scale vertically (PostgreSQL, MySQL).
+- NoSQL: Schema-flexible, horizontal scalability, eventual consistency (MongoDB, Cassandra, Redis).
+
+Q40. Deadlock vs Starvation:
+- Deadlock: Circular wait condition where two or more processes each hold a resource the other needs. Neither can progress.
+- Starvation: A low-priority process is repeatedly deferred because higher-priority tasks monopolize the resource.
+
+Q41. View vs Table:
+Table stores persistent data physically on disk. A view is a virtual query definition that executes dynamically when queried (unless materialized).
+
+Q42. ACID Properties:
+- Atomicity: All or nothing execution.
+- Consistency: Valid state to valid state.
+- Isolation: Transactions execute independently without mutual interference.
+- Durability: Committed state survives crashes.
+
+Q43. Normalization:
+Systematic technique of decomposing tables to eliminate redundancy and prevent insertion, deletion, and update anomalies (1NF, 2NF, 3NF, BCNF).
+
+Q44. Transaction Log:
+Sequential disk record of all database operations used for point-in-time recovery, audit trails, and replication.
+
+Q45. Stored Procedures vs Functions:
+Stored procedures execute procedural batches, can perform DDL/DML, manage transactions, and return multiple outputs. Functions must return a value and cannot manage transactions.
+
+Q46. Database Triggers:
+Automated event-driven stored procedures that execute before or after INSERT, UPDATE, or DELETE events. Used for auditing and enforcing constraints.
+
+Q47. SQL Cursors:
+A pointer mechanism to iterate through query result sets row-by-row when set-based logic is insufficient.
+
+Q48. Dead Tuples and VACUUM (PostgreSQL / MVCC):
+In Multi-Version Concurrency Control (MVCC), UPDATE/DELETE leaves previous versions of rows as "dead tuples". PostgreSQL uses VACUUM to reclaim storage and update visibility maps.
+
+Q49. Savepoints:
+Intermediate checkpoints inside a transaction allowing partial rollback to a specific sub-state without aborting the entire transaction.
+
+Q50. Concurrency Control:
+Techniques (locking, timestamp ordering, MVCC, isolation levels) used to ensure consistency when multiple transactions read and write concurrently.

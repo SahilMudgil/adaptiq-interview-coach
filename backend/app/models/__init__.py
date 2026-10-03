@@ -1,0 +1,31 @@
+from backend.app.models.all_models import (
+    User,
+    Resume,
+    JobDescription,
+    Subject,
+    Topic,
+    QuestionBank,
+    PDFChunk,
+    InterviewSession,
+    Question,
+    Answer,
+    Evaluation,
+    WeakTopicProfile,
+    SessionReport,
+)
+
+__all__ = [
+    "User",
+    "Resume",
+    "JobDescription",
+    "Subject",
+    "Topic",
+    "QuestionBank",
+    "PDFChunk",
+    "InterviewSession",
+    "Question",
+    "Answer",
+    "Evaluation",
+    "WeakTopicProfile",
+    "SessionReport",
+]

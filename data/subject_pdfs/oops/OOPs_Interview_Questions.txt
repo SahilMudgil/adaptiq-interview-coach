@@ -1,0 +1,66 @@
+Object-Oriented Programming (OOPs) Core Interview Questions & Answers
+
+Q1. Difference Between OOP and Structural (Procedural) Programming:
+- OOP: Bottom-up design based on classes and objects binding data and functions together. Supports data hiding (encapsulation), inheritance, and polymorphism. Suitable for complex, scalable systems.
+- SOP (Procedural): Top-down design where programs are decomposed into independent functions and subroutines. Does not provide data hiding; global data is exposed.
+
+Q2. What is Object-Oriented Programming?
+A programming paradigm organized around real-world modeling through objects (state + behavior) and classes (blueprints). Core tenets include Encapsulation, Abstraction, Inheritance, and Polymorphism.
+
+Q3. Four Pillars of OOP:
+1. Encapsulation: Bundling data attributes and manipulating methods into a single unit (class) while restricting direct outside access via private/protected modifiers.
+2. Abstraction: Exposing essential interfaces while hiding background implementation details from consumers.
+3. Inheritance: Reusability mechanism allowing derived subclasses to acquire properties and behaviors of base superclasses.
+4. Polymorphism: Ability of an interface or method call to manifest in multiple forms (static/compile-time vs dynamic/runtime).
+
+Q4. Class vs Object:
+- Class: Logical template/blueprint defined at design time. Consumes zero runtime memory for data members until instantiated.
+- Object: Physical runtime instance of a class occupying allocated heap memory with distinct attribute state.
+
+Q5. Class vs Structure:
+In modern languages like C++, structures default to public member visibility, whereas classes default to private member access. In Java/C#, classes are reference types allocated on the heap, whereas structs are value types on the stack.
+
+Q6. Can You Invoke Base Class Methods Without Creating An Instance?
+Yes:
+1. If the base method is declared `static`.
+2. By invoking it via a derived subclass inheriting the method.
+
+Q7. Types of Inheritance:
+1. Single: One derived class inherits from one base class.
+2. Multiple: A derived class inherits simultaneously from multiple base classes (e.g., C++; handled via interfaces in Java/C# to prevent Diamond Problem).
+3. Multilevel: Chained inheritance (Class C inherits from Class B, which inherits from Class A).
+4. Hierarchical: Multiple derived subclasses inherit from a single common parent base class.
+5. Hybrid: Complex combination of two or more inheritance types.
+
+Q8. Overloading vs Overriding:
+- Method Overloading (Compile-Time / Static Polymorphism): Multiple methods in the same class sharing the same name but distinct signatures (different parameter counts or types). Resolved at compile time.
+- Method Overriding (Runtime / Dynamic Polymorphism): A subclass provides a specific implementation of a virtual method already declared in its superclass, retaining identical name, return type, and signature. Resolved at runtime via virtual method tables (vtable).
+
+Q9. Access Modifiers:
+- `public`: Accessible from any class anywhere in the application.
+- `protected`: Accessible within the defining class, package/assembly, and derived subclasses.
+- `private`: Strictly accessible only within the declaring class; invisible outside.
+
+Q10. Abstract Class vs Interface:
+- Abstract Class: Partial blueprint. Can contain concrete implemented methods, instance state (fields), and constructors alongside abstract methods. Supports single inheritance.
+- Interface: Pure contract. Defines signatures that implementing classes must satisfy. In modern languages, supports default methods. A class can implement multiple interfaces.
+
+Q11. Virtual Functions & Pure Virtual Functions:
+- Virtual Function: Base class method marked `virtual` intended to be overridden in derived classes, facilitating dynamic dispatch.
+- Pure Virtual Function: A virtual function with no base implementation (`virtual void func() = 0;`), making the containing class abstract and forcing subclasses to implement it.
+
+Q12. Constructors and Destructors:
+- Constructor: Special initialization routine invoked automatically upon object instantiation. Types: Default, Parameterized, Copy Constructor (deep vs shallow copy).
+- Destructor: Cleanup routine (`~ClassName()`) invoked when an object goes out of scope or is deleted, releasing unmanaged heap resources, file handles, and sockets.
+
+Q13. Garbage Collection & Finalize:
+Automatic heap memory management identifying unreferenced objects and reclaiming memory to eliminate manual memory leaks (dangling pointers). `finalize()` is an optional final cleanup hook before object destruction.
+
+Q14. Exception Handling (Try / Catch / Finally):
+- `try`: Encloses code blocks capable of throwing runtime anomalies.
+- `catch`: Intercepts and handles specific thrown exception types.
+- `finally`: Guaranteed execution block running regardless of whether an exception was raised, utilized for closing database connections and I/O streams.
+
+Q15. Error vs Exception:
+- Error: Serious infrastructural or environmental failure that applications cannot reasonably recover from (e.g. `OutOfMemoryError`, `StackOverflowError`).
+- Exception: Recoverable condition resulting from logic or data irregularities that well-architected applications should anticipate and handle (e.g. `NullPointerException`, `FileNotFoundException`).

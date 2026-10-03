@@ -1,0 +1,49 @@
+Aptitude & Technical Screening Question Bank
+
+Section 1: Logical Reasoning
+1. What comes next in the series? 3, 9, 27, 81, __ (Answer: 243)
+2. If in a code language, "BREAK" is written as "51342," and "STOP" is written as "6748," how is "ROPE" written? (Answer: 5784)
+3. A is older than B but younger than C. D is younger than A but older than B. Who is the youngest? (Answer: B)
+4. A clock shows 7:20. What is the angle between the hour hand and the minute hand? (Answer: 110°)
+5. A boy walks 10 meters east, 15 meters south, and then 5 meters west. What is the shortest distance between his starting and ending points? (Answer: 20 meters)
+6. If it takes 4 men 6 days to build a wall, how many men would be required to build it in 3 days? (Answer: 8)
+
+Section 2: Quantitative Aptitude
+7. A train 150 meters long is running at a speed of 90 km/h. How much time will it take to cross a bridge 300 meters long? (Answer: 18 seconds)
+8. Simplify: 2/3 + 4/5 - 3/10 (Answer: 29/30)
+9. A sum of money invested at compound interest grows to ₹4840 in 2 years and ₹5324 in 3 years. What is the rate of interest per annum? (Answer: 10%)
+10. A cylindrical tank has a radius of 7 meters and a height of 10 meters. What is its volume? (Answer: 1540 m³)
+11. If 10 workers can complete a job in 12 days, how many days will it take for 15 workers to complete the same job? (Answer: 8 days)
+12. The sum of the squares of two numbers is 290, and their product is 96. Find the sum of the two numbers. (Answer: 22)
+
+Section 3: Verbal Ability
+13. Synonym of "Ephemeral": Temporary
+14. Antonym of "Obsolete": Current
+15. Fill in the blank: If I were you, I would take this opportunity.
+16. Correct sentence form: She has lost her wallet.
+17. Sentence rearrangement: This problem is very difficult.
+18. Spot the error: "He did not completed his homework" -> complete.
+
+Section 4: Computer Science Technical Aptitude
+19. What will be the output of the following C++ code? int x = 5; cout << ++x * 2; (Answer: 12)
+20. Which sorting algorithm has the best time complexity in the worst case? (Answer: Merge Sort)
+21. What is the time complexity of the binary search algorithm? (Answer: O(log n))
+22. Which data structure uses the LIFO principle? (Answer: Stack)
+23. What is the space complexity of an algorithm that uses two nested loops of size n? (Answer: O(1))
+24. In a binary search tree, the left child's value is always: Less than the parent
+25. Correct representation of a 2D array in C++: int arr[2][2];
+26. Used to ensure that a relational database is free from update anomalies: Normalization
+27. What type of join returns only the rows that have matching values in both tables? (Answer: INNER JOIN)
+28. In which type of index does the data and index both remain in the same structure? (Answer: Clustered index)
+29. What is the time complexity of inserting an element into a hash table, assuming there are no collisions? (Answer: O(1))
+30. Which protocol is used to obtain an IP address dynamically? (Answer: DHCP)
+31. What is the function of a DNS server in a network? (Answer: Resolving domain names to IP addresses)
+32. What is the maximum length of an IPv4 address? (Answer: 32 bits)
+33. What is the main purpose of the ARP protocol? (Answer: To map IP addresses to MAC addresses)
+34. Process synchronization techniques in operating systems: Semaphore, Mutex, Monitor (All of the above)
+35. Used for secure data transmission over the internet: HTTPS
+36. TCP vs UDP: TCP is connection-oriented, and UDP is connectionless.
+37. Full form of URL: Uniform Resource Locator
+38. Data structure used to implement a priority queue: Heap
+39. Polymorphism in OOP: The ability of a function to perform different tasks based on the parameters passed
+40. Function of the operating system's scheduler: Managing process execution

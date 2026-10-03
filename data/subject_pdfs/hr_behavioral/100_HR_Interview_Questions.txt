@@ -1,0 +1,137 @@
+100 Frequently Asked HR Interview Questions for B.Tech Students
+
+1. Personal Introduction & Background
+- Tell me about yourself.
+- Introduce yourself beyond your resume.
+- What are your strengths?
+- What are your weaknesses?
+- What motivates you?
+- How would your friends describe you?
+- Describe yourself in three words.
+- What makes you unique?
+- Tell me something not mentioned in your resume.
+- How do you handle stress?
+
+2. Education & Academic Experience
+- Why did you choose engineering?
+- Why your specific branch (e.g., CSE, ECE, ME)?
+- What was your favorite subject and why?
+- Tell me about a project you worked on.
+- What was your final year project?
+- Did you participate in any technical fests or hackathons?
+- Which subjects did you struggle with and how did you manage?
+- What are your academic achievements?
+- Have you taken any additional courses or certifications?
+- How have you applied what you've learned in real life?
+
+3. Internships & Training
+- Did you do any internship? What did you learn?
+- What tools or technologies did you use during your internship?
+- How did you add value to your internship project?
+- What challenges did you face during the internship?
+- How is corporate work different from college work?
+
+4. Projects & Technical Involvement
+- Explain your major project in simple terms.
+- What role did you play in the project team?
+- How did you manage deadlines?
+- What were the outcomes of your project?
+- Would you do anything differently in your project?
+
+5. Communication & Soft Skills
+- Are you comfortable working in a team?
+- How do you handle feedback or criticism?
+- Do you prefer working alone or in a group?
+- How do you resolve conflicts in a team?
+- Describe a situation where you led a team.
+
+6. Situational & Behavioral Questions
+- Tell me about a time you failed.
+- Describe a challenging situation and how you handled it.
+- Share an example of good decision-making.
+- Describe a time when you had to meet a tight deadline.
+- What would you do if your teammate is not contributing?
+
+7. Career Goals & Vision
+- Where do you see yourself in 5 years?
+- What are your short-term career goals?
+- What are your long-term career plans?
+- Do you plan to pursue higher studies?
+- How do you stay updated with industry trends?
+
+8. Company & Job Role Understanding
+- Why do you want to work for our company?
+- What do you know about our company?
+- Why should we hire you?
+- What do you expect from this role?
+- What do you think this job involves?
+
+9. Relocation, Flexibility & Adaptability
+- Are you willing to relocate?
+- Are you open to night shifts?
+- Can you travel frequently for work?
+- How do you adapt to change?
+- Are you comfortable working in a hybrid or remote model?
+
+10. General Knowledge & Awareness
+- What are some current trends in your industry?
+- What do you know about AI/ML/Cloud (relevant to your domain)?
+- Whats your opinion on ChatGPT/AI in education?
+- How has technology changed in the last 5 years?
+- How do you keep yourself informed?
+
+11. Resume-Related Questions
+- Walk me through your resume.
+- What is the most significant thing on your resume?
+- Why is there a gap in your resume (if any)?
+- Tell me more about your extracurricular activities.
+- What achievements are you most proud of?
+
+12. Campus Life & Extracurriculars
+- What did you enjoy most about your college life?
+- Were you part of any clubs or societies?
+- How did you contribute outside the classroom?
+- Describe your leadership experience in college.
+- Did you organize any events?
+
+13. Programming & Technical Knowledge (if relevant)
+- What programming languages are you comfortable with?
+- Have you done any coding projects?
+- Whats the difference between Java and Python?
+- What is OOP? Explain with examples.
+- What is your experience with databases?
+
+14. Problem Solving & Critical Thinking
+- How do you approach problem-solving?
+- Describe a time you solved a difficult problem.
+- How do you prioritize tasks?
+- Have you ever made a mistake? How did you fix it?
+- What is your thought process before starting a new task?
+
+15. Ethics, Values & Work Culture
+- How do you define success?
+- What does integrity mean to you?
+- What is your attitude toward deadlines?
+- Would you ever compromise ethics for results?
+- How do you handle failure?
+
+16. Salary, Joining & Availability
+- What are your salary expectations?
+- When can you join?
+- Are you waiting for other interview results?
+- What would you do if offered multiple jobs?
+- Are you planning to switch careers?
+
+17. Personality & Interests
+- What are your hobbies?
+- What do you do in your free time?
+- How do you manage your time?
+- What books or podcasts do you follow?
+- If not an engineer, what would you have become?
+
+18. Ending/Wrap-up Questions
+- Do you have any questions for us?
+- What are your expectations from the company?
+- What did you learn from this interview?
+- Are you open to feedback from this interview?
+- Is there anything else youd like us to know?
